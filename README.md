@@ -1,4 +1,4 @@
-# udp-mirror
+# udp-mirror [![Build Status](https://travis-ci.org/czerwonk/udp-mirror.svg)][travis]
 Listens for UDP packets an sends a copies to multiple receivers
 
 # Install
@@ -13,3 +13,4 @@ In this example we want to listen for packets on port 4560. Each packet received
 ```
 udp-mirror -listen-address ":4560" -receivers "192.168.1.1:1234,192.168.1.2:3456"
 ```
+[travis]: https://travis-ci.org/czerwonk/udp-mirror
