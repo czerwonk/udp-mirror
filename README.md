@@ -1,5 +1,5 @@
 # udp-mirror [![Build Status](https://travis-ci.org/czerwonk/udp-mirror.svg)][travis]
-Listens for UDP packets an sends a copies to multiple receivers
+Listens for UDP packets an sends copies to multiple receivers
 
 # Install
 ```
