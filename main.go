@@ -56,7 +56,8 @@ func main() {
 func printVersion() {
 	fmt.Println("udp-mirror")
 	fmt.Printf("Version: %s\n", version)
-	fmt.Println("Daniel Czerwonk, 2017")
+	fmt.Println("Author: Daniel Czerwonk")
+	fmt.Println("Source code: https://github.com/czerwonk/udp-mirror")
 }
 
 func startServer(receivers []*receiver) {
