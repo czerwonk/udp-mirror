@@ -47,7 +47,7 @@ func main() {
 	receivers := getReceivers()
 
 	for _, r := range receivers {
-		go tee(r)
+		go startReceiverWorker(r)
 	}
 
 	startServer(receivers)
@@ -100,7 +100,7 @@ func getReceivers() []*receiver {
 	return receivers
 }
 
-func tee(r *receiver) {
+func startReceiverWorker(r *receiver) {
 	conn, err := net.Dial("udp", r.address)
 	if err != nil {
 		log.Println("Could not connect to receiver %s: %s", r.address, err)
