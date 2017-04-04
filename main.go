@@ -103,7 +103,7 @@ func getReceivers() []*receiver {
 func tee(r *receiver) {
 	conn, err := net.Dial("udp", r.address)
 	if err != nil {
-		log.Println("Could connect to receiver %s: %s", r.address, err)
+		log.Println("Could not connect to receiver %s: %s", r.address, err)
 		return
 	}
 	defer conn.Close()
