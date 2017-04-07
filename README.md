@@ -13,4 +13,8 @@ In this example we want to listen for packets on port 4560. Each packet received
 ```
 udp-mirror -listen-address ":4560" -receivers "192.168.1.1:1234,192.168.1.2:3456"
 ```
+## Docker
+```
+docker run -it -p 4560:9999 czerwonk/udp-mirror "192.168.1.1:1234,192.168.1.2:3456"
+```
 [travis]: https://travis-ci.org/czerwonk/udp-mirror
