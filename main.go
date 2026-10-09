@@ -66,7 +66,9 @@ func startServer(receivers []*receiver) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer conn.Close()
+	defer func() {
+		_ = conn.Close()
+	}()
 
 	log.Printf("Listening on %s. Waiting for packets", *listenAddress)
 
@@ -106,7 +108,9 @@ func startReceiverWorker(r *receiver) {
 		log.Printf("Could not connect to receiver %s: %s\n", r.address, err)
 		return
 	}
-	defer conn.Close()
+	defer func() {
+		_ = conn.Close()
+	}()
 
 	log.Printf("Adding receiver: %s\n", r.address)
 
