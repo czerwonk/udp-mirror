@@ -1,4 +1,4 @@
-# udp-mirror [![Build Status](https://travis-ci.org/czerwonk/udp-mirror.svg)][travis]
+# udp-mirror
 Listens for UDP packets an sends copies to multiple receivers
 
 # Install
@@ -17,4 +17,3 @@ udp-mirror -listen-address ":4560" -receivers "192.168.1.1:1234,192.168.1.2:3456
 ```
 docker run -it -p 4560:9999 czerwonk/udp-mirror "192.168.1.1:1234,192.168.1.2:3456"
 ```
-[travis]: https://travis-ci.org/czerwonk/udp-mirror
