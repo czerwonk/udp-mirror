@@ -9,7 +9,7 @@ import (
 	"strings"
 )
 
-const version string = "0.1"
+const version string = "0.1.1"
 
 var (
 	listenAddress     = flag.String("listen-address", ":9999", "UDP port to listen for incoming packets")
@@ -26,7 +26,7 @@ type receiver struct {
 
 func init() {
 	flag.Usage = func() {
-		fmt.Println("Usage: udp-mirror [ ... ]\n\nParameters:\n")
+		fmt.Println("Usage: udp-mirror [ ... ]\n\nParameters:")
 		flag.PrintDefaults()
 	}
 }
@@ -92,7 +92,7 @@ func startServer(receivers []*receiver) {
 func getReceivers() []*receiver {
 	receivers := make([]*receiver, 0)
 
-	for _, x := range strings.Split(*receiverAddresses, ",") {
+	for x := range strings.SplitSeq(*receiverAddresses, ",") {
 		r := &receiver{address: strings.TrimSpace(x), channel: make(chan []byte)}
 		receivers = append(receivers, r)
 	}
@@ -103,7 +103,7 @@ func getReceivers() []*receiver {
 func startReceiverWorker(r *receiver) {
 	conn, err := net.Dial("udp", r.address)
 	if err != nil {
-		log.Println("Could not connect to receiver %s: %s", r.address, err)
+		log.Printf("Could not connect to receiver %s: %s\n", r.address, err)
 		return
 	}
 	defer conn.Close()

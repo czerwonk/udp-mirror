@@ -1,0 +1,9 @@
+name: Lint
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  lint:
+    uses: czerwonk/go-ci/.github/workflows/lint.yml@v5

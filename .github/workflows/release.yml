@@ -1,0 +1,10 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  release:
+    uses: czerwonk/go-ci/.github/workflows/release.yml@v5

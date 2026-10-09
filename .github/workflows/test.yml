@@ -1,0 +1,12 @@
+name: Test
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    uses: czerwonk/go-ci/.github/workflows/test.yml@v5
+    with:
+      build-command: go build -v -ldflags="-s -w" -trimpath -o ping_exporter
+      cgo-enabled: "0"
