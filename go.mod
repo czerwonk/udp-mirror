@@ -1,3 +1,3 @@
 module github.com/czerwonk/udp-mirror
 
-go 1.26.9
+go 1.26.10
